@@ -1,13 +1,13 @@
 require('sinatra')
 require('sinatra/reloader')
-# require('./lib/rock_paper_scissors')
+require('./lib/contact')
 also_reload('lib/**/*.rb')
 
 get('/') do
   erb(:index)
 end
 
-get('/title') do
+get('/contacts') do
   # @title = (params.fetch('title1')).rps()
-  erb(:title)
+  erb(:contacts)
 end
