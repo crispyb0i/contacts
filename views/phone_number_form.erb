@@ -1,0 +1,14 @@
+<h1>Add Phone Number</h1>
+
+<p>Add phone number here:</p>
+
+<form action="/contacts/<%= @contact.id %>" method="post">
+  <label for="phone_number">Phone Number:</label>
+  <input id="phone_number" name="phone_number" type="text">
+  <label for="area_code">Area Code:</label>
+  <input id="area_code" name="area_code" type="text">
+  <label for="type">Type:</label>
+  <input id="type" name="type" type="text">
+
+  <button type="submit">Add Phone Number</button>
+</form>

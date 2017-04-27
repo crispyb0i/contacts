@@ -39,11 +39,37 @@ get('/contacts/:id/emails/new') do
   erb(:email_address_form)
 end
 
+get('/contacts/:id/phone_numbers/new') do
+  @contact = Contact.find(params.fetch('id').to_i())
+  erb(:phone_number_form)
+end
+
+get('/contacts/:id/mailing_addresses/new') do
+  @contact = Contact.find(params.fetch('id').to_i())
+  erb(:mailing_address_form)
+end
+
 post('/contacts/:id') do
-  email = params.fetch('email')
-  @email = Email_address.new({:email => email})
   contact = Contact.find(params.fetch('id').to_i())
-  contact.add_email_address(@email)
   @contact = contact
+  if params[:phone_number]
+    phone_number = params.fetch('phone_number')
+    area_code = params.fetch('area_code')
+    type = params.fetch('type')
+    @phone_number = Phone_number.new({:phone_number => phone_number, :area_code => area_code, :type => type})
+    contact.add_phone_number(@phone_number)
+  elsif params[:email]
+    email = params.fetch('email')
+    @email = Email_address.new({:email => email})
+    contact.add_email_address(@email)
+  else
+    street_address = params.fetch('street_address')
+    city = params.fetch('city')
+    state = params.fetch('state')
+    zip = params.fetch('zip')
+    type = params.fetch('type')
+    @mailing_address = Mailing_address.new({:street_address => street_address, :city => city, :state => state, :zip => zip, :type => type})
+    contact.add_mailing_address(@mailing_address)
+  end
   erb(:contact)
 end

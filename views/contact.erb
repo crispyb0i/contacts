@@ -2,12 +2,12 @@
 <h2><%= @contact.job_title %></h2>
 <h2><%= @contact.company %></h2>
 <ul>
-  <% @contact.mailing_addresses.each() do |mailing_address| %>
-    <li><%= mailing_address.street_address %></li>
-    <li><%= mailing_address.city %></li>
-    <li><%= mailing_address.state %></li>
-    <li><%= mailing_address.zip %></li>
-    <li><%= mailing_address.type %></li>
+  <% @contact.mailing_addresses.each() do |address| %>
+    <li><%= address.street_address %></li>
+    <li><%= address.city %></li>
+    <li><%= address.state %></li>
+    <li><%= address.zip %></li>
+    <li><%= address.type %></li>
   <% end %>
 </ul>
 <ul>
@@ -15,5 +15,14 @@
     <li><%= email_address.email %></li>
   <% end %>
 </ul>
+<ul>
+  <% @contact.phone_numbers.each() do |number| %>
+    <li><%= number.phone_number %></li>
+    <li><%= number.area_code %></li>
+    <li><%= number.type %></li>
+  <% end %>
+</ul>
 <a href="/contacts/<%= @contact.id %>/emails/new">Add a new email</a><br>
+<a href="/contacts/<%= @contact.id %>/phone_numbers/new">Add a new phone number</a><br>
+<a href="/contacts/<%= @contact.id %>/mailing_addresses/new">Add a mailing address</a><br>
 <a href="/">Home</a>

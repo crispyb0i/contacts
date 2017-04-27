@@ -1,0 +1,18 @@
+<h1>Add Mailing Address</h1>
+
+<p>Add a mailing address here:</p>
+
+<form action="/contacts/<%= @contact.id %>" method="post">
+  <label for="street_address">Street:</label>
+  <input id="street_address" name="street_address" type="text">
+  <label for="city">City:</label>
+  <input id="city" name="city" type="text">
+  <label for="state">State:</label>
+  <input id="state" name="state" type="text">
+  <label for="zip">Zip:</label>
+  <input id="zip" name="zip" type="text">
+  <label for="type">Type:</label>
+  <input id="type" name="type" type="text">
+
+  <button type="submit">Add Mailing Address</button>
+</form>
