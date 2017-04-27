@@ -1,0 +1,19 @@
+<h1><%= @contact.first_name %> <%= @contact.last_name %></h1>
+<h2><%= @contact.job_title %></h2>
+<h2><%= @contact.company %></h2>
+<ul>
+  <% @contact.mailing_addresses.each() do |mailing_address| %>
+    <li><%= mailing_address.street_address %></li>
+    <li><%= mailing_address.city %></li>
+    <li><%= mailing_address.state %></li>
+    <li><%= mailing_address.zip %></li>
+    <li><%= mailing_address.type %></li>
+  <% end %>
+</ul>
+<ul>
+  <% @contact.emails.each() do |email_address| %>
+    <li><%= email_address.email %></li>
+  <% end %>
+</ul>
+<a href="/contacts/<%= @contact.id %>/emails/new">Add a new email</a><br>
+<a href="/">Home</a>
