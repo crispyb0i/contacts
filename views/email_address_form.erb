@@ -1,4 +1,10 @@
-<h1>Add email address for <%= @contact.first_name %><%= @contact.last_name %></h1>
+<ol class="breadcrumb">
+  <li><a href="/">Home</a></li>
+  <li><a href="/contacts">Contacts</a></li>
+  <li><a href="/contacts/<%= @contact.id %>"><%= @contact.first_name %> <%= @contact.last_name %></a></li>
+  <li>Add email for <%= @contact.first_name %> <%= @contact.last_name %></a></li>
+</ol>
+<h1>Add email address for <%= @contact.first_name %> <%= @contact.last_name %></h1>
 
 <p>Add a email address here:</p>
 

@@ -1,6 +1,10 @@
+<ol class="breadcrumb">
+  <li><a href="/">Home</a></li>
+  <li>Contacts</a></li>
+</ol>
 <h1>Results</h1>
 <ul>
   <% @contacts.each() do |contact| %>
-  <li><a href="/contacts/<%= contact.id %>"><%= contact.first_name %> <%= contact.last_name %></li>
+  <li><a href="/contacts/<%= contact.id %>"><%= contact.first_name %> <%= contact.last_name %></a><button>Delete</button></li>
   <% end %>
 </ul>

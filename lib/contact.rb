@@ -48,4 +48,8 @@ define_singleton_method(:find) do |identification|
   end
   found_contact
  end
+
+  define_singleton_method(:delete) do |identification|
+    @@contacts.delete(Contact.find(identification))
+  end
 end

@@ -1,3 +1,8 @@
+<ol class="breadcrumb">
+  <li><a href="/">Home</a></li>
+  <li><a href="/contacts">Contacts</a></li>
+  <li><%= @contact.first_name %> <%= @contact.last_name %></a></li>
+</ol>
 <h1><%= @contact.first_name %> <%= @contact.last_name %></h1>
 <h2><%= @contact.job_title %></h2>
 <h2><%= @contact.company %></h2>
@@ -25,4 +30,3 @@
 <a href="/contacts/<%= @contact.id %>/emails/new">Add a new email</a><br>
 <a href="/contacts/<%= @contact.id %>/phone_numbers/new">Add a new phone number</a><br>
 <a href="/contacts/<%= @contact.id %>/mailing_addresses/new">Add a mailing address</a><br>
-<a href="/">Home</a>
